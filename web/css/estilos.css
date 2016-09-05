@@ -1,8 +1,10 @@
-@import 'https://fonts.googleapis.com/css?family=Acme|Metal+Mania|Open+Sans';
+@import 'https://fonts.googleapis.com/css?family=Acme|Open+Sans|Baloo+Bhaina|Ravi+Prakash';
+
 /* 
-font-family: 'Acme', sans-serif;
-font-family: 'Metal Mania', cursive;
-font-family: 'Open Sans', sans-serif;
+font-family: 'Acme', sans-serif;            
+font-family: 'Open Sans', sans-serif;   
+font-family: 'Baloo Bhaina', cursive;   
+font-family: 'Ravi Prakash', cursive;   
 */
 
 *{
@@ -23,15 +25,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------------- Header -------------- */
-
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    
+}
 .header {
     height: 50px;
     background: #FDD700;
+
 }
 .header .contenedor {
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: space-between;   
 }
 
 .icon-menu {
@@ -56,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
     left: -100%;
     width: 100%;
 	text-align: center;
-    transition: all 0.4s;
+    transition: all 0.5s ease;
     
 }
 
@@ -64,6 +71,7 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
     padding: 0;
     margin: 0;
+    max-width: 480px;
 }
 .menu__link {
     display: block;
@@ -72,10 +80,16 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     color: #FFD700;
     border-bottom: 1px solid rgba(255,255,255,0.5);
+    transition: all 0.7s;
+    letter-spacing: 2.5px;
 }
 .menu__link:hover, .select {
-    background: #FFD700,;
+   
+	background: rgba(255,215,0,0.9);
     color: black;
+    letter-spacing: 5.5px;
+    font-size: 110%;
+    
 }
 .mostrar {
     left: 0;
@@ -83,3 +97,96 @@ h1, h2, h3, h4, h5, h6 {
 .select {
     background: #FFD700;
     color: black;
+}
+.menu__item {
+ /* font-family: 'Ravi Prakash', cursive; */
+    font-family: 'Baloo Bhaina', cursive;
+/*	font-family: 'Metal Mania', cursive; */
+	font-size: 20px;
+}
+
+/* ----------- Seccion de Inicio ----------- */
+.main .contenedor{
+    position: fixed;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    text-align: center;
+    color: #FFD700;
+    z-index: 0;
+}
+
+/*------------- Video de Fondo -------------*/
+	#fondo video{
+    position: fixed;
+    width: 380px;
+   	top: 130px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -10;
+    overflow: hidden;
+	}
+
+/*------------- Video del Fuego -------------*/
+
+#fuego1 video {
+    position:fixed;
+    width: 100px;
+    height: auto;
+    top: 85%;
+    left: 9%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -10;
+}
+#fuego2 video {
+    position:fixed;
+    width: 100px;
+    height: auto;
+    top: 85%;
+    left: 90%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -10;
+}
+
+/*------------ Menu Responsivo  ------------*/
+@media (min-width: 780px) {
+    .header {
+       height: auto;
+    }
+    .conten_menu {
+    clear: both;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+  }
+  .nav {
+    position:static;
+    width: auto;
+    }
+  .menu {
+      float: left;
+      left: 50%;
+      position: relative;
+      display: flex;
+/*    transform: translateX(0%);*/
+  }
+  .icon-menu {
+    display: none;  
+  }
+  .menu__link {
+    font-size: auto;
+    padding: 10px;
+  }
+    .menu__item{
+    font-size: 15px;
+    position: relative;
+    right: 50%;
+    float: left;
+    }
+    .menu__link:hover {
+	background: rgba(255,215,0,0.9);
+    color: black;
+    border-color: black;
+    }
+}
